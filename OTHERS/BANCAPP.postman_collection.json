@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "27e7242b-be04-4d02-8e92-a86bf49461ae",
+		"name": "BANCAPP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "findCuenta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.0.14:3010/session/find/2BD17CE7ECE96E1E3AE6E7F9870BEB47",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"14"
+					],
+					"port": "3010",
+					"path": [
+						"session",
+						"find",
+						"2BD17CE7ECE96E1E3AE6E7F9870BEB47"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usern\":\"2BD17CE7ECE96E1E3AE6E7F9870BEB47\",\r\n    \"contra\":\"5305DD8B416641356E2396F899339206\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.0.14:3010/session/login",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"14"
+					],
+					"port": "3010",
+					"path": [
+						"session",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.0.14:3010/session/logout/2BD17CE7ECE96E1E3AE6E7F9870BEB0",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"14"
+					],
+					"port": "3010",
+					"path": [
+						"session",
+						"logout",
+						"2BD17CE7ECE96E1E3AE6E7F9870BEB0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "encontrarTransacciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.0.14:3010/transaccion/findtransacciones/AE4517D40DE1AADBD23E64B2EDCEBBB1",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"14"
+					],
+					"port": "3010",
+					"path": [
+						"transaccion",
+						"findtransacciones",
+						"AE4517D40DE1AADBD23E64B2EDCEBBB1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Transferenica",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"cuentaApp\" :   \"2BD17CE7ECE96E1E3AE6E7F9870BEB47\",\r\n   \"cuentaOrigen\": \"AE4517D40DE1AADBD23E64B2EDCEBBB1\",\r\n   \"cuentaDestino\": \"B726C5BAAEB81B014754FCA568312471\",\r\n   \"valor\" : 10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.0.14:3010/transaccion/create",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"14"
+					],
+					"port": "3010",
+					"path": [
+						"transaccion",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Datos Cuenta Bancaria",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.0.14:3010/cuentab/find/AE4517D40DE1AADBD23E64B2EDCEBBB1",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"14"
+					],
+					"port": "3010",
+					"path": [
+						"cuentab",
+						"find",
+						"AE4517D40DE1AADBD23E64B2EDCEBBB1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
