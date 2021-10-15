@@ -16,7 +16,7 @@ public class Documento extends AppCompatActivity {
         setContentView(R.layout.navegador2);
         pdfView = findViewById(R.id.pdf_viewer);
         progressBar = findViewById(R.id.progressBar);
-        String urlPdf = "http://192.168.0.13:80/appausamovil/documento.pdf";
+        String urlPdf = "http://192.168.20.27:3010/appausamovil/documento.pdf";
         new RecibirPDFStream(pdfView,progressBar).execute(urlPdf);
     }
 }

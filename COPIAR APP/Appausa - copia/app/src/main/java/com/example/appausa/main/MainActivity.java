@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity
 
     private void logout(String username) {
         String u = crip.encrypt(username);
-        Retrofit con = new Retrofit.Builder().baseUrl("http://192.168.0.14:80")
+        Retrofit con = new Retrofit.Builder().baseUrl("http://192.168.20.27:3010")
                 .addConverterFactory(GsonConverterFactory.create()).build();
         ISession is = con.create(ISession.class);
         Call<Boolean> call = is.logout(u);

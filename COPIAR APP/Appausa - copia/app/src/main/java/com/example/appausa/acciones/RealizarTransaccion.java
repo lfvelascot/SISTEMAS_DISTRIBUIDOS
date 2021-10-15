@@ -77,7 +77,7 @@ public class RealizarTransaccion extends Fragment {
     private void enviar(String user, String co, String cd, String valor) {
         try{
             TransferenciaBasic tb = new TransferenciaBasic(crip.encrypt(user),crip.encrypt(co),crip.encrypt(cd), Double.valueOf(valor));
-            Retrofit con = new Retrofit.Builder().baseUrl("http://192.168.0.14:80")
+            Retrofit con = new Retrofit.Builder().baseUrl("http://192.168.20.27:3010")
                     .addConverterFactory(GsonConverterFactory.create()).build();
             ITransferencia is = con.create(ITransferencia.class);
             Call<String> call = is.guardarTransaccion(tb);
@@ -116,7 +116,7 @@ public class RealizarTransaccion extends Fragment {
     }
 
     private void cargarDatos(String usuario) {
-        Retrofit con = new Retrofit.Builder().baseUrl("http://192.168.0.14:80")
+        Retrofit con = new Retrofit.Builder().baseUrl("http://192.168.20.27:3010")
                 .addConverterFactory(GsonConverterFactory.create()).build();
         ICuenta is = con.create(ICuenta.class);
         Call<CuentaBancaria> call = is.obtenerEstado(crip.encrypt(usuario));

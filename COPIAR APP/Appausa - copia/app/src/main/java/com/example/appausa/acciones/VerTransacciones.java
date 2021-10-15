@@ -68,7 +68,7 @@ public class VerTransacciones extends Fragment {
     }
 
     private void obtenerComentarios(String s) {
-        Retrofit con = new Retrofit.Builder().baseUrl("http://192.168.0.14:80")
+        Retrofit con = new Retrofit.Builder().baseUrl("http://192.168.20.27:3010")
                 .addConverterFactory(GsonConverterFactory.create()).build();
         ITransferencia is = con.create(ITransferencia.class);
         Call<List<Transferencia>> call = is.encontrarTransacciones(crip.encrypt(user));

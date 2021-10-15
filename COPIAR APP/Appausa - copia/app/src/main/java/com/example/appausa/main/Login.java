@@ -68,7 +68,7 @@ public class Login extends AppCompatActivity {
     public void buscarCuenta(String correo, String contrasena) {
         correo = crip.encrypt(correo);
         contrasena = crip.encrypt(contrasena);
-        Retrofit con = new Retrofit.Builder().baseUrl("http://192.168.0.14:80")
+        Retrofit con = new Retrofit.Builder().baseUrl("http://192.168.20.27:3010")
                 .addConverterFactory(GsonConverterFactory.create()).build();
         ISession is = con.create(ISession.class);
         Call<String> call = is.login(new CredencialesBasic(correo,contrasena));
@@ -95,7 +95,7 @@ public class Login extends AppCompatActivity {
             }
             @Override
             public void onFailure(Call<String> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "Error de conexion", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }

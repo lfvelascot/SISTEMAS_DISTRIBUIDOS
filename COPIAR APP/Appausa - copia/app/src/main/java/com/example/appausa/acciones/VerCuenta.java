@@ -33,7 +33,7 @@ public class VerCuenta extends Fragment {
     }
 
     private void cargarDatos(String usuario) {
-        Retrofit con = new Retrofit.Builder().baseUrl("http://192.168.0.14:80")
+        Retrofit con = new Retrofit.Builder().baseUrl("http://192.168.20.27:3010")
                 .addConverterFactory(GsonConverterFactory.create()).build();
         ICuenta is = con.create(ICuenta.class);
         Call<CuentaBancaria> call = is.obtenerEstado(crip.encrypt(usuario));
