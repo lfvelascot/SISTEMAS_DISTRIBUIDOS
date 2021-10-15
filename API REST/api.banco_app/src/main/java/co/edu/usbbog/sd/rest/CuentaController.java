@@ -18,16 +18,23 @@ public class CuentaController {
 	
 	@GetMapping("/find/{id}")
 	public CuentaBancaria obtenerEstado(@PathVariable("id")String id) {
-		try {
-			CuentaBancaria ci = icb.findById(id).get();
-			if (ci != null) {
-				return ci;
-			} else {
-				return null;
-			}
-		} catch (Exception e) {
+		List<CuentaBancaria > l = icb.findAll();
+		CuentaBancaria cb = null;
+		if (l.isEmpty() || l.equals(null)) {
 			return null;
+		} else {
+			for (int i = 0; i < l.size(); i++) {
+				if (l.get(i).getUsuario().getNumDoc().equals(id)) {
+					cb = l.get(i);
+				}
+			}
+			if (cb == null) {
+				return null;
+			} else {
+				return cb;
+			}
 		}
+
 
 	}
 
