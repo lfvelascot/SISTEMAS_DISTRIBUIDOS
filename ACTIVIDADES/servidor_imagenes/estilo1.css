@@ -1,0 +1,81 @@
+.normal{
+  width: 150px;
+  padding: 2px;
+  margin: 5px 0 22px 0;
+  display: inline-table
+  border: none;
+  background: #f1f1f1;
+  alignment-baseline:text-before-edge;
+  font:Arial, Helvetica, sans-serif;
+}
+
+.principal{
+	background: linear-gradient(0deg, #B7EAFB, #FFF);
+}
+.nombre{
+	 width: 200px;
+	   padding: 2px;
+  margin: 5px 0 22px 0;
+  display: inline-table
+  border: none;
+  background: #f1f1f1;
+  alignment-baseline:text-before-edge;
+  font:Arial, Helvetica, sans-serif;
+}
+
+.title{
+	border-style:solid;
+	background:#CCC;
+}
+
+.file{
+	 width: 353px;
+	 padding: 2px;
+  margin: 5px 0 22px 0;
+  display: inline-table
+  border: none;
+  background: #f1f1f1;
+  alignment-baseline:text-before-edge;
+  font:Arial, Helvetica, sans-serif;
+}
+
+textarea{
+	display: inline-table
+  	border: none;
+ 	background: #f1f1f1;
+  	alignment-baseline:text-before-edge;
+  	font:Arial, Helvetica, sans-serif;
+}
+
+p{
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+button{
+  background-color: #333;
+  color: white;
+  padding: 8px 10px;
+  margin: 2px 0;
+  border: thick;
+  cursor: pointer;
+  width: 22%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.carnet{
+	border-style:dotted;
+	background-image: linear-gradient(to right, white,#B7EAFB,white);
+}
+
+.ctable{
+	border-bottom: 1px solid #000;
+}
+
+.ftable{
+	border-style:outset;
+}
+
+
