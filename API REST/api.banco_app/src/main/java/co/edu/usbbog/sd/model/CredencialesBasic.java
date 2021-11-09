@@ -1,14 +1,18 @@
 package co.edu.usbbog.sd.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 public class CredencialesBasic {
 	
 	private String usern, contra;
-
+	
 	public CredencialesBasic(String usern, String contra) {
-		super();
 		this.usern = usern;
 		this.contra = contra;
 	}
+
+	
+	public CredencialesBasic() {}
 
 	public String getUsern() {
 		return usern;

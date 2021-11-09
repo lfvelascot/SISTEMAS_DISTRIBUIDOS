@@ -8,6 +8,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import co.edu.usbbog.sd.crypt.AesUtil;
 import co.edu.usbbog.sd.model.Accion;
 import co.edu.usbbog.sd.model.CredencialesBasic;
 import co.edu.usbbog.sd.model.CuentaApp;
@@ -27,9 +34,13 @@ public class SesionController {
 	private ILog il;
 	@Autowired
 	private IAccion ia;
+	private AesUtil codac = new AesUtil();
 
 	@PostMapping("/login")
-	public String login(@RequestBody CredencialesBasic t) {
+	public String login(@RequestBody String x) throws JsonMappingException, JsonProcessingException {
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
+		CredencialesBasic t = mapper.readValue(x, CredencialesBasic.class);  
 		CuentaApp ci = findCuentaApp(t.getUsern());
 		if (ci != null) {
 			LocalDateTime now = obtenerfh();
